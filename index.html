@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen</title>
+</head>
+<body>
+
+<input type="text" id="countryInput" placeholder="Введіть країни через кому">
+<button onclick="addCountries()">Додати країни</button>
+<ul id="countryList"></ul>
+
+<script>
+function addCountries() {
+  var inputElement = document.getElementById('countryInput');
+  var countriesInput = inputElement.value;
+
+  var countriesArray = countriesInput.split(',').map(country => country.trim());
+
+  var listElement = document.getElementById('countryList');
+
+  listElement.innerHTML = '';
+
+  countriesArray.forEach(function(country) {
+    var listItem = document.createElement('li');
+    listItem.textContent = country;
+    listElement.appendChild(listItem);
+  });
+
+  inputElement.value = '';
+}
+</script>
+
+</body>
+</html>
