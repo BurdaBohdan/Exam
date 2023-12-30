@@ -13,17 +13,17 @@
 
 <script>
 function addCountries() {
-  var inputElement = document.getElementById('countryInput');
-  var countriesInput = inputElement.value;
+  const inputElement = document.getElementById('countryInput');
+  const countriesInput = inputElement.value;
 
-  var countriesArray = countriesInput.split(',').map(country => country.trim());
+  const countriesArray = countriesInput.split(',').map(country => country.trim());
 
-  var listElement = document.getElementById('countryList');
+  const listElement = document.getElementById('countryList');
 
   listElement.innerHTML = '';
 
   countriesArray.forEach(function(country) {
-    var listItem = document.createElement('li');
+    const listItem = document.createElement('li');
     listItem.textContent = country;
     listElement.appendChild(listItem);
   });
